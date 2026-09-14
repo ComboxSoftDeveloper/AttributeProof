@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>AttributeProof.Benchmarks.ArgumentBench-20260914-185209</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.20348.5139)
+Intel Xeon W-2255 CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK 11.0.100-preview.6.26359.118
+  [Host] : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net10  : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net8   : .NET 8.0.11 (8.0.11, 8.0.1124.51707), X64 RyuJIT x86-64-v4
+  net9   : .NET 9.0.4 (9.0.4, 9.0.425.16305), X64 RyuJIT x86-64-v4
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Ratio</th><th>RatioSD</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Library</td><td>net10</td><td>net10</td><td>0.7058 ns</td><td>0.0048 ns</td><td>0.0040 ns</td><td>0.7053 ns</td><td>1.00</td><td>0.01</td><td>64 B</td><td>-</td><td>NA</td>
+</tr><tr><td>ByHand</td><td>net10</td><td>net10</td><td>0.6427 ns</td><td>0.0648 ns</td><td>0.1900 ns</td><td>0.5756 ns</td><td>0.91</td><td>0.27</td><td>95 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Library</td><td>net8</td><td>net8</td><td>0.4621 ns</td><td>0.0109 ns</td><td>0.0097 ns</td><td>0.4598 ns</td><td>0.65</td><td>0.01</td><td>63 B</td><td>-</td><td>NA</td>
+</tr><tr><td>ByHand</td><td>net8</td><td>net8</td><td>0.4781 ns</td><td>0.0122 ns</td><td>0.0108 ns</td><td>0.4769 ns</td><td>0.68</td><td>0.02</td><td>94 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Library</td><td>net9</td><td>net9</td><td>0.7314 ns</td><td>0.0317 ns</td><td>0.0265 ns</td><td>0.7204 ns</td><td>1.04</td><td>0.04</td><td>63 B</td><td>-</td><td>NA</td>
+</tr><tr><td>ByHand</td><td>net9</td><td>net9</td><td>0.4878 ns</td><td>0.0137 ns</td><td>0.0122 ns</td><td>0.4835 ns</td><td>0.69</td><td>0.02</td><td>94 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

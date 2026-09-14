@@ -1,0 +1,21 @@
+Рантайм: 9.0.4
+
+Метод объявлен так:
+
+  static void Check(bool condition,
+      [CallerArgumentExpression(nameof(condition))] string? text = null)
+
+Что попадает в text при разных вызовах:
+
+  a + b > 10                            ложь
+  a * b == 6                            истина
+  empty is null                         истина
+  !string.IsNullOrEmpty(empty)          ложь
+
+Так устроены проверки из библиотеки классов:
+
+  ArgumentNullException             имя аргумента: empty
+  ArgumentOutOfRangeException       имя аргумента: a - 5
+
+Имя аргумента в исключении взято из места вызова,
+а не из объявления метода.
